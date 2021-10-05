@@ -6,7 +6,7 @@ before_install:
   - docker build -t subodh15/multitest -f ./client/Dockerfile.dev ./client
 
 scripts:
-  - docker run subodh15/multidocker -e CI=true npm test
+  - docker run subodh15/multitest -e CI=true npm test
 
 after_success:
   - docker build -t subodh15/multi-client ./client
