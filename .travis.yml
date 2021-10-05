@@ -13,4 +13,9 @@ after_success:
   - docker build -t subodh15/multi-nginx ./nginx
   - docker build -t subodh15/multi-server ./server
   - docker build -t subodh15/multi-worker ./worker
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push subodh15/multi-client
+  - docker push subodh15/multi-nginx
+  - docker push subodh15/multi-server
+  - docker push subodh15/multi-worker
   
